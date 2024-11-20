@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Машинка</title>
+<style>
+body {
+  margin: 0;
+  overflow: hidden; /* Для предотвращения скролла */
+  background-color: #f0f0f0; /* Светло-серый фон */
+}
+
+.car {
+  width: 200px;
+  height: 50px;
+  background-color: #333;
+  position: absolute;
+  left: -200px; /* Начальное положение за экраном */
+  top: 50%;
+  transform: translateY(-50%); /* Центрирование по вертикали */
+  border-radius: 5px;
+  animation: drive 5s linear forwards; /* Анимация движения */
+}
+
+.car-wheel {
+  width: 32px;
+  height: 32px;
+  background-color: #555;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  /* Расчет координат колес */
+}
+
+.car-wheel.front {
+  left: 20px;
+}
+
+.car-wheel.back {
+  left: 160px;
+}
+
+@keyframes drive {
+  to {
+    left: calc(100vw - 250px);
+  }
+}
+
+.road {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    width: 100vw;
+    height: 20px;
+    background-image: linear-gradient(to right, #4c4a4a, #4c4a4a);
+    z-index: -1;
+}
+
+.house {
+    position: absolute;
+    top: 45%;
+    left: calc(100vw - 250px);
+    width: 50px;
+    height: 50px;
+    background-color: #3c740f;
+    border-radius: 5px;
+}
+.stebel {
+    position: absolute;
+    top: 420px;
+    left: calc(100vw - 230px);
+    width: 10px;
+    height: 40px;
+    background-color: #856525;
+    border-radius: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="car">
+  <div class="car-wheel front"></div>
+  <div class="car-wheel back"></div>
+</div>
+<div class="road"></div>
+<div class="house"></div>
+<div class="stebel"></div>
+
+</body>
+</html>
